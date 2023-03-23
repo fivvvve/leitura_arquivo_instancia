@@ -27,14 +27,11 @@ def leitura(nome):
 #saida: print e arquivo externo com nome e dimensões de matriz de adjacencia
 def saida(mat):
 
-    #separando em duas strings simples as dimensões da matriz
-    tam = str(np.shape(mat))
-    tam = tam.split('(')
-    tam = tam[1].split(')')
-    tam = tam[0].split(',')
+    #lendo dimensões da matriz
+    tam = np.shape(mat)
 
     #juntando nome e dimensões da matriz da maneira solicitada
-    dadosI = nome + " " + tam[0] + tam[1]
+    dadosI = "{} {} {}".format(nome, tam[0], tam[1])
 
     #abrindo ou criando arquivo onde resultados serão armazenados
     arq = open('tamanhos.txt', 'a+')
