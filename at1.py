@@ -25,13 +25,13 @@ def leitura(nome):
 #função para escrever em arquivo e na tela o nome e dimensões da matriz de adjacencia de um arquivo
 #entrada: matriz de adjacencia
 #saida: print e arquivo externo com nome e dimensões de matriz de adjacencia
-def saida(mat):
+def saida(mat, nomeA):
 
     #lendo dimensões da matriz
     tam = np.shape(mat)
 
     #juntando nome e dimensões da matriz da maneira solicitada
-    dadosI = "{} {} {}".format(nome, tam[0], tam[1])
+    dadosI = "{} {} {}".format(nomeA, tam[0], tam[1])
 
     #abrindo ou criando arquivo onde resultados serão armazenados
     arq = open('tamanhos.txt', 'a+')
@@ -53,4 +53,4 @@ nome = input("Digite o nome da instância que deseja abrir (com extensão do arq
 mat = leitura(nome)
 
 #chamada da função de saida
-saida(mat)
+saida(mat, nome)
